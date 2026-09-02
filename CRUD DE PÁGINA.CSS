@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    padding: 30px;
+    transition: .3s;
+}
+
+.contenedor {
+    max-width: 1100px;
+    margin: auto;
+}
+
+header {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px #0003;
+}
+
+header h1 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #777;
+}
+
+header button {
+    border: 0;
+    background: #667eea;
+    color: white;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 8px 20px #0002;
+}
+
+.card span {
+    font-size: 30px;
+}
+
+.card small {
+    display: block;
+    color: #777;
+}
+
+.card strong {
+    font-size: 25px;
+    color: #333;
+}
+
+.panel {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px #0002;
+}
+
+.panel h2 {
+    margin-bottom: 18px;
+    color: #333;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 10px;
+}
+
+input,
+select,
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 13px;
+    font-size: 15px;
+}
+
+input,
+select {
+    border: 2px solid #eee;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #667eea;
+}
+
+button {
+    background: #667eea;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: .9;
+}
+
+.buscador {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filtros {
+    display: flex;
+    gap: 10px;
+}
+
+.filtros select {
+    flex: 1;
+}
+
+#limpiar {
+    background: #e74c3c;
+}
+
+#btnMostrar {
+    background: #555;
+}
+
+.tarea {
+    border: 2px solid #eee;
+    padding: 17px;
+    border-radius: 15px;
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: .2s;
+}
+
+.tarea:hover {
+    transform: translateX(3px);
+    box-shadow: 0 5px 15px #0001;
+}
+
+.check {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.info {
+    flex: 1;
+}
+
+.nombre {
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+}
+
+.completada .nombre {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.detalles {
+    margin-top: 7px;
+    font-size: 13px;
+    color: #777;
+}
+
+.prioridad {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.alta {
+    background: #ffe0e0;
+    color: #d63031;
+}
+
+.media {
+    background: #fff2cc;
+    color: #b7791f;
+}
+
+.baja {
+    background: #d9f7e8;
+    color: #218c5a;
+}
+
+.acciones {
+    display: flex;
+    gap: 5px;
+}
+
+.acciones button {
+    padding: 9px;
+    font-size: 13px;
+}
+
+.editar {
+    background: #f39c12;
+}
+
+.eliminar {
+    background: #e74c3c;
+}
+
+.mensaje {
+    text-align: center;
+    padding: 30px;
+    color: #888;
+    font-size: 16px;
+}
+
+.oculto {
+    display: none;
+}
+
+/* MODO OSCURO */
+
+body.oscuro {
+    background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+body.oscuro header,
+body.oscuro .panel,
+body.oscuro .card {
+    background: #1f2937;
+    color: white;
+}
+
+body.oscuro h1,
+body.oscuro h2,
+body.oscuro .nombre,
+body.oscuro .card strong {
+    color: white;
+}
+
+body.oscuro input,
+body.oscuro select {
+    background: #111827;
+    color: white;
+    border-color: #374151;
+}
+
+body.oscuro .tarea {
+    border-color: #374151;
+}
+
+body.oscuro .mensaje {
+    color: #aaa;
+}
+
+@media (max-width: 800px) {
+
+    .estadisticas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .buscador {
+        grid-template-columns: 1fr;
+    }
+
+    .filtros {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .estadisticas {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 18px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .tarea {
+        align-items: flex-start;
+    }
+
+    .acciones {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Tareas</title>
+    <link rel="stylesheet" href="CRUD DE PÁGINA.CSS">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <header>
+        <div>
+            <h1>📋 Mi Control de Tareas</h1>
+            <p>Organiza tus actividades fácilmente</p>
+        </div>
+
+        <button id="tema">🌙</button>
+    </header>
+
+    <!-- ESTADÍSTICAS -->
+    <section class="estadisticas">
+
+        <div class="card">
+            <span>📋</span>
+            <div>
+                <small>Total</small>
+                <strong id="total">0</strong>
+            </div>
+        </div>
+
+        <div class="card">
+            <span>⏳</span>
+            <div>
+                <small>Pendientes</small>
+                <strong id="pendientes">0</strong>
+            </div>
+        </div>
+
+        <div class="card">
+            <span>✅</span>
+            <div>
+                <small>Completadas</small>
+                <strong id="completadas">0</strong>
+            </div>
+        </div>
+
+        <div class="card">
+            <span>📊</span>
+            <div>
+                <small>Progreso</small>
+                <strong id="porcentaje">0%</strong>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- AGREGAR -->
+    <section class="panel">
+
+        <h2>➕ Nueva tarea</h2>
+
+        <form id="formulario">
+
+            <input
+                type="text"
+                id="tarea"
+                placeholder="Escribe una tarea..."
+                required
+            >
+
+            <input
+                type="date"
+                id="fecha"
+            >
+
+            <select id="prioridad">
+                <option value="baja">🟢 Baja</option>
+                <option value="media" selected>🟡 Media</option>
+                <option value="alta">🔴 Alta</option>
+            </select>
+
+            <button type="submit">
+                ➕ Agregar
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- BUSCADOR -->
+    <section class="panel">
+
+        <div class="buscador">
+
+            <input
+                type="text"
+                id="buscar"
+                placeholder="🔎 Escribe el nombre de una tarea..."
+            >
+
+            <button id="btnBuscar">
+                🔎 Buscar tareas
+            </button>
+
+            <button id="btnMostrar">
+                📋 Mostrar todas
+            </button>
+
+        </div>
+
+        <div class="filtros">
+
+            <select id="filtro">
+                <option value="todas">Todas</option>
+                <option value="pendientes">Pendientes</option>
+                <option value="completadas">Completadas</option>
+                <option value="alta">Prioridad alta</option>
+                <option value="media">Prioridad media</option>
+                <option value="baja">Prioridad baja</option>
+            </select>
+
+            <button id="limpiar">
+                🗑️ Limpiar completadas
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- LISTA -->
+    <section class="panel">
+
+        <h2>📝 Mis tareas</h2>
+
+        <div id="mensaje" class="mensaje">
+            📭 No tienes tareas todavía.
+        </div>
+
+        <div id="lista"></div>
+
+    </section>
+
+</div>
+
+<script src="CRUD DE PÁGINA.JS"></script>
+
+</body>
+</html>
